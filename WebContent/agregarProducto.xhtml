@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible"/>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" /> 
+	<h:outputStylesheet library="css" name="style.css"/>
+	<title>CRUD DAO JSF</title>
+</h:head>
+<h:body>
+	<h1>Practica CRUD DAO JSF</h1>
+	<h:form id="agregarProductoForm" class="form-horizontal">
+	<div class="form-group">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<h2>Editar producto</h2>
+		</div>
+	</div>
+	<hr/>
+	<div class="form-group">
+		<h:outputLabel for="txtIdProducto" class="control-label col-sm-4">Id Producto:</h:outputLabel>
+		<div class="col-sm-4">
+			<h:inputText id="txtIdProducto" value="#{productoBean.idProducto}" validatorMessage="ID obligatorio" required="true" requiredMessage="Id del producto obligatorio">
+					<f:validateRequired/>
+			</h:inputText>
+		</div>
+		<h:message for="txtIdProducto" styleClass="text text-danger"></h:message>
+	</div>
+	<div class="form-group">
+			<h:outputLabel for="txtnombreProducto" class="control-label col-sm-4">Nombre Producto:</h:outputLabel>
+				<div class="col-sm-4">
+					<h:inputText id="txtNombreProducto" value="#{productoBean.nombreProducto}" validatorMessage="Nombre del producto obligatorio" required="true" requiredMessage="Nombre del producto obligatorio" >
+						<f:validateRequired/>
+					</h:inputText>
+				</div>
+			<h:message for="txtNombreProducto" styleClass="text text-danger"></h:message>
+		</div>
+		<div>
+			<h:outputLabel for="txtPrecioProducto" class="control-label col-sm-4">Precio Producto:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="txtPrecioProducto" value="#{productoBean.precioProducto}" validatorMessage="Precio obligatorio" required="true" requiredMessage="Precio del producto obligatorio" >
+					<f:validateRequired/>
+				</h:inputText>
+			</div>
+			<h:message for="txtPrecioProducto" styleClass="text text-danger"></h:message>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<div class="col-sm-2">
+						<h:commandButton value="Agregar" action="#{productoBean.guardarDetallesProducto(productoBean)}" class="btn btn-success btnWidth"/>			
+				</div>
+				<div class="col-sm-1">
+				</div>
+				<div class="col-sm-2">
+					<h:link outcome="index.xhtml" value="Ver lista de productos" class="btn btn-primary" />
+				</div>
+			</div>
+		</div>
+	</h:form>
+	<h:outputScript library="js" name="jquery-3.3.1.js" />
+	<h:outputScript library="js" name="bootstrap.min.js" />
+	<h:outputScript library="js" name="script.js" />
+</h:body>
+</html>

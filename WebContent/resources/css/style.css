@@ -1,0 +1,21 @@
+h2
+{
+    color: blue; 
+}
+
+.col-xs-updated {        
+    width: 92%;
+}
+.tableUpdated {
+    width: 90%;
+    margin: 17px 58px 0;
+}
+.btnSpace {
+    margin: 17px;
+}     
+.btnWidth{
+    width: 80px;
+}
+.updateBtnStyle{
+    width:80px;
+}
